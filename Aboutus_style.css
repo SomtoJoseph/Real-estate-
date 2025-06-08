@@ -1,0 +1,508 @@
+:root{
+    --text-light:#64748b;
+    --white:#ffff;
+    --text-dark:#0f172a;
+    --max-width: 1100px;
+    --jade: #009688;
+}
+
+*{
+    padding: 0; margin: 0;
+    box-sizing: border-box;
+    font-family: "Lato", sans-serif;
+}
+
+::-webkit-scrollbar{
+    height: 8px;
+}
+
+::-webkit-scrollbar-track{
+    background: #323232;
+}
+
+::-webkit-scrollbar-thumb{
+    background: var(--jade);
+}
+
+.banner{
+    text-align: center;
+    background-image: linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.75)),url(Properties/home-3.jpg);
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 40vh;
+}
+
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 60px;
+    align-items: center;
+    position: fixed;
+    width: 100%;  
+    transition: all .50s ease;
+    background-image: linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.75)),url(Properties/home-3.jpg);
+    border: transparent;
+    z-index: 1;
+}
+
+.logo{
+    font-size: 1.5rem;
+    font-weight: 1000;
+    color: var(--white);
+}
+
+.navbar-menu{
+    display: flex;
+    list-style-type: none;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+}
+
+.navbar-toggle{
+    display: none;
+    background: transparent;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+}
+
+.bar{
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    background: #fff;
+    transition: all 0.3s ease-in-out;
+}
+
+.navbar-menu{
+    display: flex;
+    list-style-type: none;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+}
+
+.navbar .navbar-menu.active{
+    display: flex;
+}
+
+.navbar-menu li{
+    position: relative;
+    margin: 0px 10px;
+    padding:0 2px;
+}
+
+.navbar-menu li a{
+    text-decoration: none;
+    color: var(--white);
+    font-size: 20px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.navbar-menu li .active{
+    color: var(--jade);
+}
+
+.navbar-menu li a::before{
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    margin-top: -2px;
+    background: linear-gradient(to right, var(--jade), var(--jade));
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    transition: transform 0.4s ease-in-out;
+}
+
+.navbar-menu li a:hover::before{
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+.title{
+    font-size: 57px;
+    color: var(--white);
+    width: 100%;
+    position: absolute;
+    top: 25%;
+    transform: translateY(-50%);
+    text-align: center;
+}
+
+.title span{
+    color: var(--jade);
+}
+
+.aboutus{
+    max-width: var(--max-width);
+    margin: auto;
+    margin-top: 4rem;
+}
+
+.aboutus .image_text{
+    padding: 2rem 1rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+}
+
+.image_text .image{
+    position: relative;
+}
+
+.image_text img{
+    width: 350px;
+    height: 350px;
+}
+
+.image_text .about_text{
+    padding-top: 3rem;
+}
+
+.image_text h2{
+    margin-bottom: 2rem;
+    font-size: 3rem;
+    font-weight: 700;
+}
+
+.image_text p{
+    margin-bottom: 2rem;
+    font-size: 1.3rem;
+    color: var(--text-light);
+}
+
+.achievements{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin: auto;
+    margin-top: 4rem;
+    width: var(--max-width);
+    gap: 10rem;
+}
+
+.achievements h2{
+    font-weight: 900;
+    font-size: 50px;
+}
+
+.achievements span{
+    color: var(--jade);
+    font-weight: 700;
+}
+
+.achievements .first{
+   padding-left: 1rem;
+}
+
+.agents{
+    margin-top: 4rem;
+}
+
+.agents h1{
+    text-align: center;
+    font-size: 47px;
+    margin-bottom: 2rem;
+}
+
+.agents .team{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+.agents p{
+    margin-bottom: 2rem;
+    font-size: 1.3rem;
+}
+
+.agents .team .team-box img{
+    width: 100%;
+    height: auto;
+}
+
+.agents .team .team-box h3,
+h5{ 
+    text-align: center;
+    background: var(--jade);
+    margin-top: -4px;
+    color: var(--white);
+    font-size: 15px;
+}
+
+.agents .team .team-box h3{
+    font-size: 30px;
+}
+
+.testimonial{
+    margin-top: 4rem;
+}
+
+.testimonial-grid{
+    margin-top: 2rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.business-card{
+    padding: 2rem;
+    border-radius: 10px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.business-rating{
+    margin-bottom: 2rem;
+    font-size: 1rem;
+    color: var(--text-light);
+}
+
+.business-card p{
+    margin-bottom: 2rem;
+    color: var(--text-light);
+}
+
+.business-member{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.business-member img{
+    max-width: 40px;
+    border-radius: 100%;
+}
+
+.business-member p{
+    margin: 0;
+}
+
+footer{
+    max-width: var(--max-width);
+    margin: auto;
+    padding: 5rem 1rem;
+}
+
+footer .footer-con{
+    display: flex;
+    gap: 10rem;
+}
+
+.footer_col h3{
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 1rem;
+}
+
+.footer_col p{
+    color: var(--text-dark);
+    font-size: 1rem;
+    margin-bottom: 1rem;
+}
+
+.footer_col h4{
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--text-dark);
+}
+
+.footer_col a{
+    display: block;
+    margin-bottom: 1rem;
+    color: var(--text-light);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.footer_col a:hover{
+    color: var(--jade);
+}
+
+footer p{
+    font-style: italic;
+    font-family: monospace;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    text-align: center;
+    font-size: 1.3rem;
+}
+
+@media (width < 900px) {
+    p{
+        text-align: center;
+        font-size: 1rem;
+    }
+
+    h1{
+        margin-bottom: 0.5rem;
+        font-size: 2rem;
+    }
+
+    header .logo{
+        font-size: 1.2rem;
+    }
+
+    header .navbar-menu{
+        gap: 1rem;
+    }
+
+    header .navbar li a{
+        font-size: 1rem;
+    }
+
+    .aboutus{
+        max-width: 100%;
+    }
+
+    .aboutus .about_text p{
+        text-align: left;
+    }
+
+    .achievements{
+        max-width: 100%;
+        padding-left: 3rem;
+    }
+
+    .testimonial{
+        margin-bottom: 4rem;
+    }
+
+    .testimonial-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .testimonial-grid p{
+        text-align: left;
+    }
+
+    .footer .footer-con{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+    }
+
+    .footer .footer_col p{
+        text-align: left;
+    }
+
+    .footer .footer-con{
+        margin-top: 0rem;
+        margin-bottom: 0;
+    }
+}
+
+@media (width < 600px){
+
+    header .navbar{
+        padding: 1rem;
+        height: 13vh;
+    }
+
+    header .navbar-menu{
+        display: none;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1.7rem !important;
+        position: absolute;
+        height: 100vh;
+        width: 250px;
+        top: 0;
+        right: 0;
+        padding: 5rem 1.5rem;
+        box-shadow: 0 10px 10px rgba(0, 0, 0, 0.5); 
+        background-image: linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.75)),url(Properties/home-3.jpg);
+        transition: all .90s ease;
+    }
+
+    .navbar-toggle{
+        display: block;
+        z-index: 999;
+        padding-left: 9rem;
+    }
+
+    .navbar-toggle.active .bar:nth-child(2){
+        opacity: 0;
+    }
+
+    .navbar-toggle.active .bar:nth-child(1){
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    .navbar-toggle.active .bar:nth-child(3){
+        transform: translateY(-8px) rotate(-45deg);
+    }
+
+    header .navbar-menu a{
+        display: block;
+        font-size: 20px;
+        padding: 15px;
+    }
+
+    header .logo{
+        font-size: 15px;
+    }
+
+    .banner{
+        height:27vh ;
+    }
+
+    .title{
+        position: absolute;
+        top: 18%;
+    }
+
+    .aboutus{
+        max-width: 100%;
+    }
+
+    .aboutus .image_text{
+        max-width: 100%;
+        grid-template-columns: repeat(1,1fr);
+    }
+
+    .aboutus .image_text .image{
+        display: none;
+    }
+
+    .aboutus .image_text .about_text{
+        padding-top: 0rem;
+    }
+
+    .aboutus .image_text .about_text h2{
+        font-size: 2rem;
+        text-align: center;
+    }
+
+    .aboutus .image_text .about_text p{
+        padding-top: 0rem;
+        text-align: center;
+    }
+
+    .achievements{
+        gap: 10px;
+        max-width: 100%;
+    }
+
+    .achievements h2{
+        font-size: 2.4rem;
+    }
+
+    .achievements span{
+        font-size: 13px;
+    }
+
+    .agents .team{
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .testimonial .testimonial-grid{
+        grid-template-columns: repeat(1, 1fr);
+    }
+}

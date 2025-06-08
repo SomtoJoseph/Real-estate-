@@ -1,0 +1,338 @@
+:root{
+    --text-light:#64748b;
+    --white:#ffff;
+    --text-dark:#0f172a;
+    --max-width: 1400px;
+    --jade: #009688;
+}
+
+*{
+    padding: 0; margin: 0;
+    box-sizing: border-box;
+    font-family: "Lato", sans-serif;
+}
+
+::-webkit-scrollbar{
+    height: 8px;
+}
+
+::-webkit-scrollbar-track{
+    background: #323232;
+}
+
+::-webkit-scrollbar-thumb{
+    background: var(--jade);
+}
+
+.banner{
+    text-align: center;
+    background-image: linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.75)),url(Properties/home-3.jpg);
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 40vh;
+}
+
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 60px;
+    align-items: center;
+    position: fixed;
+    width: 100%;  
+    transition: all .50s ease;
+    background-image: linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.75)),url(Properties/home-3.jpg);
+    border: transparent;
+    z-index: 1;
+}
+
+.logo{
+    font-size: 1.5rem;
+    font-weight: 1000;
+    color: var(--white);
+}
+
+.navbar-menu{
+    display: flex;
+    list-style-type: none;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+}
+
+.navbar-toggle{
+    display: none;
+    background: transparent;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+}
+
+.bar{
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    background: #fff;
+    transition: all 0.3s ease-in-out;
+}
+
+.navbar-menu{
+    display: flex;
+    list-style-type: none;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+}
+
+.navbar .navbar-menu.active{
+    display: flex;
+}
+
+.navbar-menu li{
+    position: relative;
+    margin: 0px 10px;
+    padding:0 2px;
+}
+
+.navbar-menu li a{
+    text-decoration: none;
+    color: var(--white);
+    font-size: 20px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.navbar-menu li .active{
+    color: var(--jade);
+}
+
+.navbar-menu li a::before{
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    margin-top: -2px;
+    background: linear-gradient(to right, var(--jade), var(--jade));
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    transition: transform 0.4s ease-in-out;
+}
+
+.navbar-menu li a:hover::before{
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+.title{
+    font-size: 57px;
+    color: var(--white);
+    width: 100%;
+    position: absolute;
+    top: 25%;
+    transform: translateY(-50%);
+    text-align: center;
+}
+
+.properties{
+    max-width: var(--max-width);
+    margin: auto;
+    padding: 2rem 2rem;
+}
+
+.property-grid{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+.property_card{
+    position: relative;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.property_card img{
+    width: 100%;
+    border-radius: 5px;
+    transition: .3s;
+}
+
+.property_card img:hover{
+    scale: 1.1;
+}
+
+.property_card .prop{
+    color: var(--white);
+    position: absolute;
+    font-size: 0.9rem;
+    top: 1rem;
+    left: 1rem;
+    padding: 0.5rem 1rem;
+    background-color: rgba(0, 0, 0, 0.5);
+    border: 1px solid var(--white);
+    border-radius: 5px;
+}
+
+footer{
+    max-width: 1100px;
+    margin: auto;
+    padding: 5rem 1rem;
+}
+
+footer .footer-con{
+    display: flex;
+    gap: 10rem;
+}
+
+.footer_col h3{
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 1rem;
+}
+
+.footer_col p{
+    color: var(--text-dark);
+    font-size: 1rem;
+    margin-bottom: 1rem;
+}
+
+.footer_col h4{
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--text-dark);
+}
+
+.footer_col a{
+    display: block;
+    margin-bottom: 1rem;
+    color: var(--text-light);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.footer_col a:hover{
+    color: var(--jade);
+}
+
+footer p{
+    font-style: italic;
+    font-family: monospace;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    text-align: center;
+    font-size: 1.3rem;
+}
+
+@media (width < 900px) {
+    p{
+        text-align: center;
+        font-size: 1rem;
+    }
+
+    h1{
+        margin-bottom: 0.5rem;
+        font-size: 2rem;
+    }
+
+    header .logo{
+        font-size: 1.2rem;
+    }
+
+    header .navbar-menu{
+        gap: 1rem;
+    }
+
+    header .navbar li a{
+        font-size: 1rem;
+    }
+
+    .property_card .prop h3,p,span{
+        font-size: 0.85rem;
+    }
+    
+    .footer .footer-con{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+    }
+
+    .footer .footer_col p{
+        text-align: left;
+    }
+
+    .footer .footer-con{
+        margin-top: 0rem;
+        margin-bottom: 0;
+    }
+}
+
+@media (width < 600px){
+
+    header .navbar{
+        padding: 1rem;
+        height: 13vh;
+    }
+
+    header .navbar-menu{
+        display: none;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1.7rem !important;
+        position: absolute;
+        height: 100vh;
+        width: 250px;
+        top: 0;
+        right: 0;
+        padding: 5rem 1.5rem;
+        box-shadow: 0 10px 10px rgba(0, 0, 0, 0.5); 
+        background-image: linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.75)),url(Properties/home-3.jpg);
+        transition: all .90s ease;
+    }
+
+    .navbar-toggle{
+        display: block;
+        z-index: 999;
+        padding-left: 9rem;
+    }
+
+    .navbar-toggle.active .bar:nth-child(2){
+        opacity: 0;
+    }
+
+    .navbar-toggle.active .bar:nth-child(1){
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    .navbar-toggle.active .bar:nth-child(3){
+        transform: translateY(-8px) rotate(-45deg);
+    }
+
+    header .navbar-menu a{
+        display: block;
+        font-size: 20px;
+        padding: 15px;
+    }
+
+    header .logo{
+        font-size: 15px;
+    }
+
+    .banner{
+        height:27vh ;
+    }
+
+    .title{
+        position: absolute;
+        top: 18%;
+    }
+
+    .property-grid{
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
